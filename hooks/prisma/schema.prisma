@@ -32,7 +32,7 @@ model Zap {
 model ZapRun{
   id  String @id @default(uuid())
   zapId String 
-  metadata Json //metadata can be anything i.e data from the webhook hit
+  metadata Json?  //metadata can be anything i.e data from the webhook hit
   zap Zap @relation(fields: [zapId], references: [id])
   zapRunOutbox zapRunOutbox?
 }
